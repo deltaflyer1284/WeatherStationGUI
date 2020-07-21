@@ -115,7 +115,7 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLabel" name="SoilTempLable">
+     <widget class="QLabel" name="AirHumLable">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -123,7 +123,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Soil Temp</string>
+       <string>Air Hum</string>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -153,7 +153,7 @@
      </widget>
     </item>
     <item row="2" column="2">
-     <widget class="QLabel" name="airHumLabel">
+     <widget class="QLabel" name="pressLabel">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -161,7 +161,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Air Hum</string>
+       <string>Pressure</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -195,7 +195,7 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QLabel" name="airHum">
+     <widget class="QLabel" name="press">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -223,7 +223,7 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLabel" name="soilTemp">
+     <widget class="QLabel" name="airHum">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -278,7 +278,7 @@
      </widget>
     </item>
     <item row="3" column="3">
-     <widget class="QLabel" name="SoilHum">
+     <widget class="QLabel" name="airQ">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -309,7 +309,7 @@
      </widget>
     </item>
     <item row="2" column="3">
-     <widget class="QLabel" name="soilHumidityLabel">
+     <widget class="QLabel" name="airQLabel">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -317,7 +317,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Soil Hum</string>
+       <string>Air Quality</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -325,7 +325,7 @@
      </widget>
     </item>
     <item row="3" column="4">
-     <widget class="QLabel" name="press">
+     <widget class="QLabel" name="volt">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -353,7 +353,7 @@
      </widget>
     </item>
     <item row="2" column="4">
-     <widget class="QLabel" name="pressLabel">
+     <widget class="QLabel" name="voltLabel">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -361,7 +361,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Pressure</string>
+       <string>Voltage</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -369,7 +369,7 @@
      </widget>
     </item>
     <item row="3" column="5">
-     <widget class="QLabel" name="lux">
+     <widget class="QLabel" name="watt">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -397,7 +397,7 @@
      </widget>
     </item>
     <item row="2" column="5">
-     <widget class="QLabel" name="luxLabel">
+     <widget class="QLabel" name="powerLabel">
       <property name="font">
        <font>
         <family>Arial</family>
@@ -405,7 +405,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Luminosity</string>
+       <string>Power</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -438,17 +438,7 @@
       </item>
       <item>
        <property name="text">
-        <string>Soil Temperature</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
         <string>Air Humidity</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Soil Humidity</string>
        </property>
       </item>
       <item>
@@ -458,7 +448,17 @@
       </item>
       <item>
        <property name="text">
-        <string>Luminosity</string>
+        <string>Air Quality</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Voltage</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Power</string>
        </property>
       </item>
      </widget>

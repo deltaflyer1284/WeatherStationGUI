@@ -8,24 +8,19 @@ Created on Mon Jun 15 14:13:32 2020
 
 from PyQt5.QtWidgets import*
 from PyQt5.uic import loadUi
+
 import matplotlib
 matplotlib.use('TkAgg')
-import tkinter as tk
-import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.figure import Figure
-from matplotlib.dates import DateFormatter
-#from tkinter import *
+
+
 import requests
 import json
 import pandas as pd
-from tkinter import ttk
-from tkinter import font
+# from tkinter import ttk
+# from tkinter import font
 
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
-import numpy as np
-import random
+
 
 
 from datetime import datetime
@@ -43,10 +38,12 @@ class WeatherStationWidget(QMainWindow):
         
         self.listWidget.itemClicked.connect(self.updatePlot)
         self.refreshButton.clicked.connect(self.refresh)
+        self.actionRefresh.triggered.connect(self.refresh)
+        self.quitButton.clicked.connect(QApplication.instance().quit)
         self.refresh()
 
         
-     
+ 
 
         
     def refresh(self):       
@@ -61,19 +58,18 @@ class WeatherStationWidget(QMainWindow):
         for i in range(6):
             df.columns.values[i+2]=data['channel'][df.columns[i+2]]
         df.columns=df.columns.astype(str)
-        df.soilT=df.soilT*1.8 +32
         df.airT=df.airT*1.8 +32
         
         
         for i in range(6):
             df.iloc[:,i+2]=round(df.iloc[:,i+2],1)
             
-        self.soilTemp.setText(str(df.soilT[len(df)-1]))
+        self.airQ.setText(str(df.airQ[len(df)-1]))
         self.airTemp.setText(str(df.airT[len(df)-1]))
-        self.SoilHum.setText(str(df.soilH[len(df)-1]))
+        self.volt.setText(str(df.sysV[len(df)-1]))
         self.airHum.setText(str(df.airH[len(df)-1]))
-        self.press.setText(str(df.pressure[len(df)-1]))
-        self.lux.setText(str(df.lux[len(df)-1]))
+        self.press.setText(str(df.press[len(df)-1]))
+        self.watt.setText(str(df.sysW[len(df)-1]))
         
         now = datetime.now()
         
@@ -100,12 +96,12 @@ class WeatherStationWidget(QMainWindow):
         
         
         switcher = {
-            "Air Temperature": 4,
-            "Soil Temperature": 2,
-            "Air Humidity": 5,
-            "Soil Humidity": 3,
-            "Pressure": 6,
-            "Luminosity": 7,
+            "Air Temperature": 5,
+            "Air Humidity": 6,
+            "Pressure": 7,
+            "Air Quality": 2,
+            "Voltage": 3,
+            "Power": 4,
      
         }
         return switcher.get(argument,-1)
