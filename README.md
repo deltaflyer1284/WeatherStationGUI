@@ -1,2 +1,2 @@
 # WeatherStationGUI
-Displays weather station data 
+Console application written in python for displaying IoT sensor data.
